@@ -14,3 +14,13 @@ Auto restart zimbra if something stops working, because some zimbra services lik
     ```
 
 4. `chmod 500 /root/pushbullet.sh` to prevent access token leak. Same goes with other files to be safe.
+
+## Example
+
+**mail.example.com**
+```
+Fri, 11 Feb 2022 10:13:00 +0100
+	antivirus               Stopped
+Zimbra was restarted
+up 3 hours, 45 minutes
+```
