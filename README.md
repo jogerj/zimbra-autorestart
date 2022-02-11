@@ -1,6 +1,6 @@
 # zimbra-autorestart
 
-Auto restart zimbra if something stops working, because some zimbra services likes to stop working randomly. Prevent consecutive restart if last restart didn't fix the problem. Also send a Pushbullet notification on restart/reboot.
+Auto restart zimbra if something stops working, because some zimbra services likes to stop working randomly for absolutely no reason and restarting (some) services fixes it. This is a cure-all solution I came up with. Prevent consecutive restart if last restart didn't fix the problem. Also send a Pushbullet notification on restart/reboot.
 
 ## Setup
 
@@ -15,12 +15,29 @@ Auto restart zimbra if something stops working, because some zimbra services lik
 
 4. `chmod 500 /root/pushbullet.sh` to prevent access token leak. Same goes with other files to be safe.
 
-## Example
+## Example pushes
 
-**mail.example.com**
+**mail.example.com (zimbra restart)**
 ```
 Fri, 11 Feb 2022 10:13:00 +0100
 	antivirus               Stopped
 Zimbra was restarted
 up 3 hours, 45 minutes
+```
+
+**mail.example.com (zimbra restart)**
+```
+Fri, 11 Feb 2022 10:15:21 +0100
+	antivirus               Stopped
+Zimbra restart failed to solve problem!
+up 3 hours, 47 minutes
+```
+
+**mail.example.com (reboot)**
+```
+Fri, 11 Feb 2022 09:58:16 +0100
+reboot   system boot  4.15.0-167-gener Fri Feb 11 09:57   still running
+reboot   system boot  4.15.0-167-gener Fri Feb  4 02:15   still running
+
+wtmp begins Wed Feb  2 17:06:09 2022
 ```
